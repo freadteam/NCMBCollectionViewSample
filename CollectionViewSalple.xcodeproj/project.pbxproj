@@ -103,9 +103,9 @@
 		2C97BC1C207D06AF00FB4B9E /* CollectionViewSalple */ = {
 			isa = PBXGroup;
 			children = (
-				2CA4BE79207D1D730022077E /* APIKey.swift */,
 				2C344A0E207DB494003EC4E1 /* SignUpViewController.swift */,
 				2C344A10207DB4A4003EC4E1 /* SignInViewController.swift */,
+				2CA4BE79207D1D730022077E /* APIKey.swift */,
 				2C97BC1D207D06AF00FB4B9E /* AppDelegate.swift */,
 				2C80642E207D254900D0075F /* Post.swift */,
 				2C344A12207DC33F003EC4E1 /* User.swift */,

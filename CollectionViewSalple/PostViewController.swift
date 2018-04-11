@@ -16,6 +16,7 @@ import Kingfisher
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
     var resizedImage: UIImage!
+    @IBOutlet var postImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,19 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     
-    //アルバムから画像を選んだ時
+    //画像を選んだ時の処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         //サイズを圧縮する
         resizedImage = selectedImage.scale(byFactor: 0.4)
-        
+        postImageView.image = resizedImage
+        //閉じる
+        picker.dismiss(animated: true, completion: nil)
+      
+    }
+    
+    @IBAction func postImage() {
+    
         // 撮影した画像をデータ化したときに右に90度回転してしまう問題の解消
         UIGraphicsBeginImageContext(resizedImage.size)
         let rect = CGRect(x: 0, y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
@@ -73,8 +80,6 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print(progress)
         }
     }
-    
-    
     
     //カメラを起動
     @IBAction func camera() {

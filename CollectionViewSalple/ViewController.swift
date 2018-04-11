@@ -48,6 +48,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //cellの登録
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+
         //imageViewとセルの結びつけ
         let sampleView = cell.viewWithTag(1) as! UIImageView
         let imageUrl = posts[indexPath.row].imageUrl
@@ -71,14 +72,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //選択されたセルの処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toNext", sender: nil)
-        collectionView.deselectItem(at: indexPath, animated: true)
+       
+        selectedPost = posts[indexPath.row]
+         performSegue(withIdentifier: "toNext", sender: nil)
     }
     
     //受け渡し
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNext" {
         let nextViewController = segue.destination as! NextViewController
-       nextViewController.selectedObjectId = selectedPost?.objectId
+       nextViewController.selectedImageUrl = selectedPost?.imageUrl
+        
+        }
+        
+        
     }
    
     func loadimages() {

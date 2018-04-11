@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,25 +82,41 @@
                     <view key="view" contentMode="scaleToFill" id="cXM-mH-KEE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ed-Km-UhA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DMu-52-qRE"/>
                     </view>
                     <navigationItem key="navigationItem" id="oq5-6p-on1">
-                        <barButtonItem key="leftBarButtonItem" title="アルバム" id="DTR-2u-1DE">
+                        <barButtonItem key="leftBarButtonItem" title="投稿" id="YIE-0u-fBA">
                             <connections>
-                                <action selector="album" destination="YUb-b3-cpc" id="pFQ-1D-dEm"/>
+                                <action selector="postImage" destination="YUb-b3-cpc" id="bHJ-Rj-HQY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="カメラ" id="1j9-BS-3vo">
-                            <connections>
-                                <action selector="camera" destination="YUb-b3-cpc" id="wLz-KY-AX2"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="カメラ" id="1j9-BS-3vo">
+                                <connections>
+                                    <action selector="camera" destination="YUb-b3-cpc" id="wLz-KY-AX2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="アルバム" id="DTR-2u-1DE">
+                                <connections>
+                                    <action selector="album" destination="YUb-b3-cpc" id="pFQ-1D-dEm"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="postImageView" destination="3Ed-Km-UhA" id="3pZ-CU-XIO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdj-9l-YBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="857"/>
+            <point key="canvasLocation" x="2004" y="856.82158920539734"/>
         </scene>
         <!--Next View Controller-->
         <scene sceneID="yWh-kg-CGw">
@@ -118,7 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="dIj-wt-MAm"/>
                     </view>
                     <connections>
-                        <outlet property="imageview" destination="qcY-wb-GMg" id="cCK-Jq-MgC"/>
+                        <outlet property="selectedImageView" destination="qcY-wb-GMg" id="Zxz-Cd-Zap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xD1-Pp-Vvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
