@@ -1,0 +1,28 @@
+PODS:
+  - Kingfisher (4.7.0)
+  - NCMB (2.4.3)
+  - NYXImagesKit (2.3)
+
+DEPENDENCIES:
+  - Kingfisher
+  - NCMB (from `https://github.com/NIFTYCloud-mbaas/ncmb_ios.git`, branch `develop`)
+  - NYXImagesKit
+
+EXTERNAL SOURCES:
+  NCMB:
+    :branch: develop
+    :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
+
+CHECKOUT OPTIONS:
+  NCMB:
+    :commit: 4e5a13aff7787d78864c15cc65475f5997288aed
+    :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
+
+SPEC CHECKSUMS:
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  NCMB: 7b88a86be4a770bd260f42295c7649b00f57f178
+  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
+
+PODFILE CHECKSUM: 02477183cad3d61086fc861b2943a189d44930cb
+
+COCOAPODS: 1.4.0
